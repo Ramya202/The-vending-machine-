@@ -1,0 +1,47 @@
+Scenario 1: Multi-currency support
+Given Snack Vending Machine should accept multi currency
+When Customer enters British Coins for snacks
+And Snacks will be dispensed
+Then Total credit value is uploaded on a display screen
+When Customer entered Euro Coins for snacks
+And Snacks will be dispensed 
+Then Total credit value is uploaded on a display screen
+When Customer entered First British Coin for snacks
+And Customer entered Second Euro Coin for snacks
+Then Message displayed on screen saying 'Mixed currency is Not accepted and first coin of the second currency entered does not contribute to the
+credit value and is returned to the Customer'
+
+Scenario 2: Dispensing change 
+Given Vending machine should have Snacks
+When Customer enters coins for a snack
+And Customer selects a snack
+Then Snacks will be dispensed 
+And customer’s remaining credit is displayed on the screen
+
+Given Vending machine should have Snacks
+When Customer enters coins for a snack
+And Customer selects a snack
+Then Snacks will be dispensed 
+And Change is returned in the smallest number of coins
+
+Given Vending machine should have Snacks
+When Customer enters coins for a snack
+And Customer selects a snack
+Then machine will notify unable to offer change, the customer must be notified of this via the display screen 
+
+
+Scenario 4:
+GIVEN Vending machine must accept contactless payment
+when customer able to pay using contactless payment debit/credit/apple pay
+Then Machine will debit customers account for the selected product
+
+
+Scenario 5: 
+GIVEN Vending Machine notifies Service Operator on significant/error events
+When Specific Product is reaching Low in Stock 
+Then Service Operator Should be notified with “A product reaches low stock”
+When Specific Product is Out of Stock 
+Then Service Operator Should be notified with “A product goes out of stock”
+When determined temp in the vending machine is not maintained  
+Then Service Operator Should be notified with “The machine temperature goes below or above pre-determined range”
+
